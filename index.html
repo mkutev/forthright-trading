@@ -43,9 +43,9 @@
 
   <body class="h-100 text-white">
 
-    <div class="media-backdrop w-100 h-100 d-block bg-dark">
-      <video autoplay loop>
-        <source src="images/Export2.mp4" type="video/mp4">
+    <div class="media-backdrop w-100 h-100 d-block bg-dark">  
+      <video id="bg-video" class="" loop poster="">
+        <source type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>  
@@ -93,6 +93,29 @@
       integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
       crossorigin="anonymous"></script>
 
+
+    <script type="text/javascript" xml="space">
+      let video = document.getElementById("bg-video");
+      let req = new XMLHttpRequest();
+  
+      req.open('GET', 'https://github.com/momchilkutev/forthright-trading/raw/3dabcdf38fb7976ad64d176fbf1f0ca188fba068/images/Export2.mp4', true);
+      req.responseType = 'blob';
+      req.send();
+  
+      req.onload = function () {
+        if (this.status === 200) {
+          console.log('req.onload');
+          let videoBlob = this.response;
+          let vidSrc = URL.createObjectURL(videoBlob);
+          video.src = vidSrc;
+          video.play();
+        }
+      }
+      
+      req.onerror = function () {
+          console.log("! [Error loading banner video] !");
+      }
+  </script>
 
   </body>
 
