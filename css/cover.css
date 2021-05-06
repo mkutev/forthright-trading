@@ -76,6 +76,7 @@ h6 {
   z-index: -1;
   background-image: url("../images/jzx-1.jpg");
   background-size: cover;
+  background-position: center;
   max-height: 100vh;
   overflow: hidden;
 }
