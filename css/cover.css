@@ -94,12 +94,12 @@ h6 {
 
 #bg-video {
   opacity: 0;
-  transition: opacity 300ms ease;
+  transition: opacity 2s ease;
 }
 
 #bg-video.ready {
   opacity: 1;
-  transition: opacity 300ms ease;
+  transition: opacity 2s ease;
 }
 
 /* First Para */
