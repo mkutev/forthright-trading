@@ -105,7 +105,7 @@ h6 {
 /* First Para */
 #intro {
   min-height: 100vh;
-  padding-top: 60vh;
+  padding-top: 65vh;
   background: rgb(0, 0, 0);
   background: linear-gradient(
     180deg,
@@ -124,3 +124,39 @@ h6 {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+
+/* Contact Methods List */
+.contact-list {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: flex-start; */
+  align-items: center;
+  list-style: none;
+  padding-left: 0;
+  text-transform: uppercase;
+}
+
+.contact-list li:first-child {
+  letter-spacing: 1.5px;
+  border-right: 2px solid rgba(255,255,255,0.5);
+  padding-right: 10px;
+  font-style: italic;
+}
+
+.contact-list li:not(:first-child) {
+  padding: 0;
+  margin-left: 1.5rem;
+}
+
+.contact-list li a {
+  text-decoration: none;
+  display: block;
+}
+
+.contact-list li:not(:first-child) i {
+  display: block;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+
