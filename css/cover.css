@@ -14,9 +14,14 @@
  * Base structure
  */
 
+html {
+  background-color: black;
+}
+
 body {
   text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
   box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
+  background-color: transparent;
 }
 
 .cover-container {
@@ -25,7 +30,7 @@ body {
 
 main,
 main * {
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 /*
