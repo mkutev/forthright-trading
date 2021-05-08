@@ -23,7 +23,7 @@
   <body class="h-100 text-white">
 
     <div class="media-backdrop w-100 h-100 d-block bg-dark">  
-      <video id="bg-video" class="" loop autoplay poster="">
+      <video id="bg-video" class="" loop muted autoplay poster="">
         <source type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -83,20 +83,25 @@
     <script type="text/javascript" xml="space">
       let video = document.getElementById("bg-video");
       let req = new XMLHttpRequest();
-  
+      let ready = false;
+
       req.open('GET','https://momchilkutev.github.io/forthright-trading/images/Export2.mp4', true);
       req.responseType = 'blob';
       req.send();
   
       req.onload = function () {
         if (this.status === 200) {
-          console.log('req.onload');
           let videoBlob = this.response;
           let vidSrc = URL.createObjectURL(videoBlob);
           video.src = vidSrc;
-          video.play();
+          // video.play();
+          ready = true;
           video.classList.add("ready");
         }
+      }
+
+      if (ready) {
+
       }
       
       req.onerror = function () {
