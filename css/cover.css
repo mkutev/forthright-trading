@@ -124,6 +124,9 @@ h6 {
 
 #foreground-video {
   overflow: hidden;
+  background-image: url("../images/jzx-1.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 #foreground-video::after {
@@ -136,7 +139,6 @@ h6 {
   height: 200px;
   background:linear-gradient(180deg, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 1) 100%);
 }
-
 
 #videotron {
   height: 100%;
