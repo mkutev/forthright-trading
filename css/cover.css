@@ -125,7 +125,7 @@ h6 {
 #foreground-video {
   overflow: hidden;
   background-image: url("../images/jzx-1.jpg");
-  background-size: cover;
+  background-size: auto;
   background-position: center;
 }
 
