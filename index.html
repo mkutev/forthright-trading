@@ -58,14 +58,10 @@
           <div class="col-12">
             <!-- <p class="lead">Sourcing | Import | Export | Logistics</p> -->
             <h1 class="display-1">Forthright Trading</h1>
-            <p class="one-liner">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione porro eveniet quia
-              magnam
-              rem
-              nesciunt vitae commodi consectetur similique assumenda.</p>
+            <p class="one-liner">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione porro eveniet quia magnam remnesciunt vitae commodi consectetur similique assumenda.</p>
 
             <ul class="contact-list">
               <li>Contact</li>
-
               <li><a class="text-white" href="https://www.facebook.com/forthrighttrading/" target="_blank" title="Forthright Trading Facebook Page"><i class="fab fa-facebook"></i></a></li>
               <li><a class="text-white" href="https://www.instagram.com/forthright__trading/?hl=en" title="Forthright Trading Instagram" target="_blank"><i class="fab fa-instagram"></i></a></li>
               <li><a class="text-white" href="mailto:forthrighttrading@gmail.com" title="Email Forthright Trading" target="_blank"><i class="far fa-envelope"></i></a></li>
@@ -180,6 +176,16 @@
       let intro = $('#intro').height();
       let videoHeight = $(window).height() - intro;
       $('#foreground-video').height(videoHeight);
+      let videoCenter = $('#videotron').width()/2;
+      let viewportCenter = $(window).width()/2;
+      let newVideoCenter = videoCenter - viewportCenter; 
+      $('#videotron').css({
+        '-webkit-transform' : 'translateX(-' + newVideoCenter + 'px)',
+        '-moz-transform'    : 'translateX(-' + newVideoCenter + 'px)',
+        '-ms-transform'     : 'translateX(-' + newVideoCenter + 'px)',
+        '-o-transform'      : 'translateX(-' + newVideoCenter + 'px)',
+        'transform'         : 'translateX(-' + newVideoCenter + 'px)'
+      })
 
       console.log('Viewport Height[' + $(window).height() + ']; Intro Height[' + intro + ']; Video Height['+videoHeight+']');
     }

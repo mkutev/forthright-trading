@@ -139,7 +139,7 @@ h6 {
 
 #videotron {
   height: 100%;
-  transform: translateX(-40%);
+  /* transform: translateX(-40%); */
 }
 
 @media (min-width: 768px) {
