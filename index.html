@@ -44,8 +44,8 @@
   <main class="d-flex flex-column w-100 h-100 justify-content-end">
 
 
-    <section id="foreground-video">
-      <video id="videotron" class="d-block d-md-none" loop muted autoplay poster="">
+    <section id="foreground-video" class="d-md-none">
+      <video id="videotron" class="d-block" onclick="this.play()" loop muted autoplay poster="">
         <source type="video/mp4">
         Your browser does not support the video tag.
       </video>
