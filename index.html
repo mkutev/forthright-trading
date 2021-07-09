@@ -153,6 +153,18 @@
         ready = true;
         video.classList.add("ready");
         videotron.classList.add("ready");
+
+        let bgVideoPromise = video.play();
+        let fgVideoPromise = videotron.play();
+
+        if (fgVideoPromise !== undefined) {
+          fgVideoPromise.then(_ => {
+              console.log('FG video autoplayed!')
+          }).catch(error => {
+            videotron.muted = true;
+            videotron.play();
+          });
+        }
       }
     }
 
