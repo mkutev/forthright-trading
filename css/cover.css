@@ -139,6 +139,7 @@ h6 {
 
 #videotron {
   height: 100%;
+  transform-origin: left;
   /* transform: translateX(-40%); */
 }
 

@@ -172,27 +172,38 @@
       }
     }
 
-    function resizeVideotron() {
-      let intro = $('#intro').height();
-      let videoHeight = $(window).height() - intro;
-      $('#foreground-video').height(videoHeight);
+    function setForegroundVideoHeight() {
+      let viewportHeight = $(window).height();
+      let introHeight = $('#intro').height();
+      $('#foreground-video').height(viewportHeight-introHeight);
+    }
+
+    function recenterVideotron() {
       let videoCenter = $('#videotron').width()/2;
+      console.log(videoCenter);
       let viewportCenter = $(window).width()/2;
+      console.log(viewportCenter);
       let newVideoCenter = videoCenter - viewportCenter; 
+      console.log(newVideoCenter);
+
       $('#videotron').css({
         '-webkit-transform' : 'translateX(-' + newVideoCenter + 'px)',
         '-moz-transform'    : 'translateX(-' + newVideoCenter + 'px)',
         '-ms-transform'     : 'translateX(-' + newVideoCenter + 'px)',
         '-o-transform'      : 'translateX(-' + newVideoCenter + 'px)',
         'transform'         : 'translateX(-' + newVideoCenter + 'px)'
-      })
-
-      console.log('Viewport Height[' + $(window).height() + ']; Intro Height[' + intro + ']; Video Height['+videoHeight+']');
+      });
     }
 
-    
+
+
     $(window).resize( function() { isPortrait() });
-    $(window).resize( function() { resizeVideotron() });
+    $(window).resize( function() { setForegroundVideoHeight() });
+    $(window).resize( function() { recenterVideotron() });
+
+    setForegroundVideoHeight();
+    recenterVideotron();
+
   </script>
 
 </body>
