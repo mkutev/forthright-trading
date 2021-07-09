@@ -110,19 +110,43 @@ h6 {
 
 /* First Para */
 #intro {
-  min-height: 100vh;
-  padding-top: 65vh;
+  padding: 2em 0;
   background: rgb(0, 0, 0);
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0) 46%,
-    rgba(0, 0, 0, 1) 100%
-  );
 }
 
 #intro h1 {
   font-weight: 500;
+}
+
+#intro .one-liner {
+  max-width: 800px;
+}
+
+#foreground-video {
+  overflow: hidden;
+}
+
+#foreground-video::after {
+  content: "";
+  display: block;
+  position: relative;
+  bottom: 200px;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background:linear-gradient(180deg, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 1) 100%);
+}
+
+#videotron {
+  height: 100%;
+  transform: translateX(-40%);
+}
+
+@media (min-width: 768px) {
+  #intro {
+    padding: 8em 0 4em 0;
+    background: linear-gradient( 180deg, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 1) 100%);
+  }
 }
 
 /* Buttons */

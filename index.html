@@ -1,114 +1,194 @@
 <!doctype html>
 <html lang="en" class="h-100">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="mmk">
-    <meta name="generator" content="">
-    <title>Forthright Trading</title>
-    <link rel="icon" type="image/png" href="images/ft-favicon-circle.png">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="mmk">
+  <meta name="generator" content="">
+  <title>Forthright Trading</title>
+  <link rel="icon" type="image/png" href="images/ft-favicon-circle.png">
 
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/cover.css" rel="stylesheet">
-    <link href="css/fontawesome-free-5.15.3-web/css/all.min.css" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/cover.css" rel="stylesheet">
+  <link href="css/fontawesome-free-5.15.3-web/css/all.min.css" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&display=swap" rel="stylesheet" type="text/css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
-  </head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" type="text/css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
+</head>
 
 
-  <body class="h-100 text-white">
+<body class="h-100 text-white">
 
-    <div class="media-backdrop w-100 h-100 d-block bg-dark">  
-      <video id="bg-video" class="" loop muted autoplay poster="">
-        <source type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>  
+  <div class="media-backdrop w-100 h-100 d-block bg-dark">
+    <video id="bg-video" class="" loop muted autoplay poster="">
+      <source type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
-    <header class="mb-auto">
-      <!-- <div>
+  <!-- <header class="mb-auto">
+    <div>
         <h3 class="float-md-start mb-0">Forthright Trading</h3>
         <nav class="nav nav-masthead justify-content-center float-md-end">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
-          <a class="nav-link" href="#">Recent Imports</a>
+          <a class="na v-link" href="#">Recent Imports</a>
           <a class="nav-link" href="#">Contact</a>
         </nav>
-      </div> -->
-    </header>
+      </div>
+  </header> -->
 
-    <main>
+  <main class="d-flex flex-column w-100 h-100 justify-content-end">
 
-      <section id="intro">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 col-md-8 col-lg-6">
-              <!-- <p class="lead">Sourcing | Import | Export | Logistics</p> -->
-              <h1 class="display-1">Forthright Trading</h1>
-              <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione porro eveniet quia magnam rem nesciunt vitae commodi consectetur similique assumenda.</p>
-              
-              <ul class="contact-list">
-                <li>Contact</li>
-                
-                <li><a class="text-white" href="#" title=""><i class="fab fa-facebook"></i></a></li>
-                <li><a class="text-white" href="#" title=""><i class="fab fa-instagram"></i></a></li>
-                <li><a class="text-white" href="#" title=""><i class="far fa-envelope"></i></a></li>
-                <li><a class="text-white" href="#" title=""><i class="fas fa-phone"></i></a></li>
-              </ul>
 
+    <section id="foreground-video">
+      <video id="videotron" class="d-block d-md-none" loop muted autoplay poster="">
+        <source type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+
+    <section id="intro">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <!-- <p class="lead">Sourcing | Import | Export | Logistics</p> -->
+            <h1 class="display-1">Forthright Trading</h1>
+            <p class="one-liner">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione porro eveniet quia
+              magnam
+              rem
+              nesciunt vitae commodi consectetur similique assumenda.</p>
+
+            <ul class="contact-list">
+              <li>Contact</li>
+
+              <li><a class="text-white" href="#" title=""><i class="fab fa-facebook"></i></a></li>
+              <li><a class="text-white" href="#" title=""><i class="fab fa-instagram"></i></a></li>
+              <li><a class="text-white" href="#" title=""><i class="far fa-envelope"></i></a></li>
+              <li><a class="text-white" href="#" title=""><i class="fas fa-phone"></i></a></li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-6 d-flex align-items-stretch">
+            <div class="contact-wrap w-100">
+              <h3 class="mb-4">Write us</h3>
+              <div id="form-message-warning" class="mb-4"></div>
+              <div id="form-message-success" class="mb-4">
+                Your message was sent, thank you!
+              </div>
+              <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <textarea name="message" class="form-control" id="message" cols="30" rows="6"
+                        placeholder="Message"></textarea>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <input type="submit" value="Send Message" class="btn btn-primary">
+                      <div class="submitting"></div>
+                    </div>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>
-      </section>
-
-
       </div>
+    </section> -->
 
-    </main>
+  </main>
 
-    <footer class="mt-auto text-white-50">
-      <!-- <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a
-          href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p> -->
-    </footer>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-      crossorigin="anonymous"></script>
+  <footer class="mt-auto text-white-50">
+  </footer>
 
 
-    <script type="text/javascript" xml="space">
-      let video = document.getElementById("bg-video");
-      let req = new XMLHttpRequest();
-      let ready = false;
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
 
-      req.open('GET','https://momchilkutev.github.io/forthright-trading/images/Export2.mp4', true);
-      req.responseType = 'blob';
-      req.send();
-  
-      req.onload = function () {
-        if (this.status === 200) {
-          let videoBlob = this.response;
-          let vidSrc = URL.createObjectURL(videoBlob);
-          video.src = vidSrc;
-          // video.play();
-          ready = true;
-          video.classList.add("ready");
-        }
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <script type="text/javascript" xml="space">
+    let video = document.getElementById("bg-video");
+    let videotron = document.getElementById("videotron");
+    let req = new XMLHttpRequest();
+    let ready = false;
+
+    req.open('GET', 'https://momchilkutev.github.io/forthright-trading/images/Export2.mp4', true);
+    req.responseType = 'blob';
+    req.send();
+
+    req.onload = function () {
+      if (this.status === 200) {
+        let videoBlob = this.response;
+        let vidSrc = URL.createObjectURL(videoBlob);
+        video.src = vidSrc;
+        videotron.src = vidSrc;
+        // video.play();
+        ready = true;
+        video.classList.add("ready");
+        videotron.classList.add("ready");
       }
+    }
 
-      if (ready) {
-
-      }
-      
-      req.onerror = function () {
-          console.log("! [Error loading banner video] !");
-      }
+    req.onerror = function () {
+      console.log("! [Error loading banner video] !");
+    }
   </script>
 
-  </body>
+  <script type='text/javascript' xml="space">
+    function isPortrait() {
+      if (window.innerWidth / window.innerHeight < 1) {
+        console.log('portrait');
+        return true;
+      } else {
+        console.log('landscape');
+        return false;
+      }
+    }
+
+    function resizeVideotron() {
+      let intro = $('#intro').height();
+      let videoHeight = $(window).height() - intro;
+      $('#foreground-video').height(videoHeight);
+
+      console.log('Viewport Height[' + $(window).height() + ']; Intro Height[' + intro + ']; Video Height['+videoHeight+']');
+    }
+
+    
+    $(window).resize( function() { isPortrait() });
+    $(window).resize( function() { resizeVideotron() });
+  </script>
+
+</body>
 
 </html>
