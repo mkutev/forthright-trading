@@ -178,11 +178,11 @@
 
     function recenterVideotron() {
       let videoCenter = $('#videotron').width()/2;
-      console.log(videoCenter);
+      console.log('Fg video X center: ' + videoCenter);
       let viewportCenter = $(window).width()/2;
-      console.log(viewportCenter);
+      console.log('Viewport X center: ' + viewportCenter);
       let newVideoCenter = videoCenter - viewportCenter; 
-      console.log(newVideoCenter);
+      console.log('New X center: ' + newVideoCenter);
 
       $('#videotron').css({
         '-webkit-transform' : 'translateX(-' + newVideoCenter + 'px)',
@@ -195,7 +195,9 @@
 
 
 
-    $(window).resize( function() { isPortrait() });
+    $(window).resize( function() { if (isPortrait()) {
+      $('#bg-video').height('100%');
+    } });
     $(window).resize( function() { setForegroundVideoHeight() });
     $(window).resize( function() { recenterVideotron() });
 
