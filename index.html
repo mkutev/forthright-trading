@@ -161,8 +161,7 @@
           fgVideoPromise.then(_ => {
               console.log('FG video autoplayed!')
           }).catch(error => {
-            videotron.muted = true;
-            videotron.play();
+            console.log('Autoplay blocked... bummer.');
           });
         }
       }
