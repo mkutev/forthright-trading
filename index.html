@@ -138,7 +138,6 @@
     let video = document.getElementById("bg-video");
     let videotron = document.getElementById("videotron");
     let req = new XMLHttpRequest();
-    let ready = false;
 
     req.open('GET', 'https://momchilkutev.github.io/forthright-trading/images/Export2.mp4', true);
     req.responseType = 'blob';
@@ -150,21 +149,8 @@
         let vidSrc = URL.createObjectURL(videoBlob);
         video.src = vidSrc;
         videotron.src = vidSrc;
-        // video.play();
-        ready = true;
         video.classList.add("ready");
         videotron.classList.add("ready");
-
-        let bgVideoPromise = video.play();
-        let fgVideoPromise = videotron.play();
-
-        if (fgVideoPromise !== undefined) {
-          fgVideoPromise.then(_ => {
-              console.log('FG video autoplayed!')
-          }).catch(error => {
-            console.log('Autoplay blocked... bummer.');
-          });
-        }
       }
     }
 
