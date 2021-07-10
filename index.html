@@ -197,6 +197,8 @@
 
     $(window).resize( function() { if (isPortrait()) {
       $('#bg-video').height('100%');
+    } else {
+      $('#bg-video').height('auto');
     } });
     $(window).resize( function() { setForegroundVideoHeight() });
     $(window).resize( function() { recenterVideotron() });
