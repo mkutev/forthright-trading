@@ -176,36 +176,36 @@
       $('#foreground-video').height(viewportHeight-introHeight);
     }
 
-    function recenterVideotron() {
-      let videoCenter = $('#videotron').width()/2;
-      console.log('Fg video X center: ' + videoCenter);
+    function recenterVideotron(vidElement) {
+      let videoHalfWidth = $(vidElement).width()/2;  
+      console.log('Fg video X center: ' + videoHalfWidth);
       let viewportCenter = $(window).width()/2;
       console.log('Viewport X center: ' + viewportCenter);
-      let newVideoCenter = videoCenter - viewportCenter; 
-      console.log('New X center: ' + newVideoCenter);
+      let videoElementOffset = videoHalfWidth - viewportCenter; 
+      console.log('New X center: ' + videoElementOffset);
 
-      $('#videotron').css({
-        '-webkit-transform' : 'translateX(-' + newVideoCenter + 'px)',
-        '-moz-transform'    : 'translateX(-' + newVideoCenter + 'px)',
-        '-ms-transform'     : 'translateX(-' + newVideoCenter + 'px)',
-        '-o-transform'      : 'translateX(-' + newVideoCenter + 'px)',
-        'transform'         : 'translateX(-' + newVideoCenter + 'px)'
+      $(vidElement).css({
+        '-webkit-transform' : 'translateX(-' + videoElementOffset + 'px)',
+        '-moz-transform'    : 'translateX(-' + videoElementOffset + 'px)',
+        '-ms-transform'     : 'translateX(-' + videoElementOffset + 'px)',
+        '-o-transform'      : 'translateX(-' + videoElementOffset + 'px)',
+        'transform'         : 'translateX(-' + videoElementOffset + 'px)'
       });
     }
-
-
 
     $(window).resize( function() { if (isPortrait()) {
       $('#bg-video').height('100%');
     } else {
       $('#bg-video').height('auto');
     } });
+
     $(window).resize( function() { setForegroundVideoHeight() });
-    $(window).resize( function() { recenterVideotron() });
+    $(window).resize( function() { recenterVideotron('#videotron') });
+    $(window).resize( function() { recenterVideotron('#bg-video') });
 
     setForegroundVideoHeight();
-    recenterVideotron();
-
+    recenterVideotron('#videotron');
+    recenterVideotron('#bg-video');
   </script>
 
 </body>
