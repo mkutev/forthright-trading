@@ -74,6 +74,8 @@
       </div>
     </section>
 
+    <!-- <section id="loading"></section> -->
+
     <!-- <section class="contact">
       <div class="container">
         <div class="row">
@@ -139,6 +141,14 @@
     let videotron = document.getElementById("videotron");
     let req = new XMLHttpRequest();
 
+    // req.onreadystatechange = function() {
+		// 	if(this.readyState !== 4) {
+		// 		$('#loading').show();
+		// 	} else {
+		// 		$('#loading').hide();
+		// 	}
+    // }
+
     req.open('GET', 'https://momchilkutev.github.io/forthright-trading/images/Export2.mp4', true);
     req.responseType = 'blob';
     req.send();
@@ -178,11 +188,8 @@
 
     function recenterVideotron(vidElement) {
       let videoHalfWidth = $(vidElement).width()/2;  
-      console.log('Fg video X center: ' + videoHalfWidth);
       let viewportCenter = $(window).width()/2;
-      console.log('Viewport X center: ' + viewportCenter);
       let videoElementOffset = videoHalfWidth - viewportCenter; 
-      console.log('New X center: ' + videoElementOffset);
 
       $(vidElement).css({
         '-webkit-transform' : 'translateX(-' + videoElementOffset + 'px)',
@@ -195,7 +202,6 @@
 
     function aspectCompare(vidElement) {
       let vidAspectRatio = $(vidElement).width() / $(vidElement).height();
-
       if ( ($(window).width() / $(window).height()) > vidAspectRatio ) {
         return true;
       } else {
@@ -219,9 +225,9 @@
     $(window).resize( function() { recenterVideotron('#bg-video') });
 
     setForegroundVideoHeight();
-    setAspect('#bg-video');
     recenterVideotron('#videotron');
     recenterVideotron('#bg-video');
+
   </script>
 
 </body>
