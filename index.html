@@ -193,17 +193,33 @@
       });
     }
 
-    $(window).resize( function() { if (isPortrait()) {
-      $('#bg-video').height('100%');
-    } else {
-      $('#bg-video').height('auto');
-    } });
+    function aspectCompare(vidElement) {
+      let vidAspectRatio = $(vidElement).width() / $(vidElement).height();
 
+      if ( ($(window).width() / $(window).height()) > vidAspectRatio ) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    function setAspect(vidElement) {
+      if (aspectCompare(vidElement)) {
+        $(vidElement).width('100%');
+        $(vidElement).height('auto');
+      } else {
+        $(vidElement).width('auto');
+        $(vidElement).height('100%');
+      }
+    }
+
+    $(window).resize( function() { setAspect('#bg-video') });
     $(window).resize( function() { setForegroundVideoHeight() });
     $(window).resize( function() { recenterVideotron('#videotron') });
     $(window).resize( function() { recenterVideotron('#bg-video') });
 
     setForegroundVideoHeight();
+    setAspect('#bg-video');
     recenterVideotron('#videotron');
     recenterVideotron('#bg-video');
   </script>
