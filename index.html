@@ -161,7 +161,7 @@
         videotron.src = vidSrc;
         video.classList.add("ready");
         videotron.classList.add("ready");
-        setAspect('#bg-video');
+        // setAspect('#bg-video');
       }
     }
 
@@ -201,9 +201,11 @@
       });
     }
 
-    function aspectCompare(vidElement) {
+    function viewportExceedVideoCheck(vidElement) {
       let vidAspectRatio = $(vidElement).width() / $(vidElement).height();
-      if ( ($(window).width() / $(window).height()) > vidAspectRatio ) {
+      let viewportAspectRatio = $(window).width() / $(window).height()
+      console.log(viewportAspectRatio + ' vs ' + vidAspectRatio);
+      if ( viewportAspectRatio > vidAspectRatio ) {
         return true;
       } else {
         return false;
@@ -211,12 +213,14 @@
     }
 
     function setAspect(vidElement) {
-      if (aspectCompare(vidElement)) {
+      if (viewportExceedVideoCheck(vidElement)) {
         $(vidElement).width('100%');
         $(vidElement).height('auto');
+        console.log('AR: width priority.');
       } else {
         $(vidElement).width('auto');
         $(vidElement).height('100%');
+        console.log('AR: width priority.');
       }
     }
 
@@ -225,9 +229,11 @@
     $(window).resize( function() { recenterVideotron('#videotron') });
     $(window).resize( function() { recenterVideotron('#bg-video') });
 
-    setForegroundVideoHeight();
-    recenterVideotron('#videotron');
-    recenterVideotron('#bg-video');
+    // setForegroundVideoHeight();
+    // recenterVideotron('#videotron');
+    // recenterVideotron('#bg-video');
+    // setAspect('#bg-video');
+
 
   </script>
 
