@@ -74,7 +74,7 @@
       </div>
     </section>
 
-    <!-- <section id="loading"></section> -->
+    <section id="loading"></section>
 
     <!-- <section class="contact">
       <div class="container">
@@ -141,13 +141,13 @@
     let videotron = document.getElementById("videotron");
     let req = new XMLHttpRequest();
 
-    // req.onreadystatechange = function() {
-		// 	if(this.readyState !== 4) {
-		// 		$('#loading').show();
-		// 	} else {
-		// 		$('#loading').hide();
-		// 	}
-    // }
+    req.onreadystatechange = function() {
+			if(this.readyState !== 4) {
+				$('#loading').show();
+			} else {
+				$('#loading').hide();
+			}
+    }
 
     req.open('GET', 'https://momchilkutev.github.io/forthright-trading/images/Export2.mp4', true);
     req.responseType = 'blob';
