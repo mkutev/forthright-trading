@@ -165,7 +165,7 @@
       }
     }
 
-    // THROW ERROR FROM LOADING VIDEO
+    // THROW ERROR IF PROBLEM LOADING VIDEO.
     req.onerror = function () {
       console.log("! [Error loading banner video] !");
     }
@@ -173,7 +173,7 @@
 
   <script type='text/javascript' xml="space">
     
-    // CHECK IF ASPECT RATIO IS LANDSCAPE OR PORTRAIT 
+    // CHECK IF ASPECT RATIO IS LANDSCAPE OR PORTRAIT.
     function isPortrait() {
       if (window.innerWidth / window.innerHeight < 1) {
         console.log('portrait');
@@ -187,13 +187,14 @@
       }
 
     }
-    
+    // SET THE HEIGHT OF THE VIDEO ON MOBILE BASED ON THE HEIGHT OF THE INTRO PARAGRAPH.
     function setForegroundVideoHeight() {
       let viewportHeight = $(window).height();
       let introHeight = $('#intro').height();
       $('#foreground-video').height(viewportHeight-introHeight);
     }
-
+   
+    // RECENTER THE BACKGROUND VIDEO ON INTIAL LOAD AND UPON SCREEN RESIZE.
     function recenterVideotron(vidElement) {
       let videoHalfWidth = $(vidElement).width()/2;  
       let viewportCenter = $(window).width()/2;
@@ -208,6 +209,7 @@
       });
     }
 
+    // CHECK IF THE ASPECT RATIO OF THE VIEWPORT IS GREATER THAT OF THE BACKGROUND VIDEO.
     function viewportExceedVideoCheck(vidElement) {
       let vidAspectRatio = $(vidElement).width() / $(vidElement).height();
       let viewportAspectRatio = $(window).width() / $(window).height()
@@ -219,6 +221,7 @@
       }
     }
 
+    // SET THE ASPECT RATIO OF THE BACKGROUND VIDEO BASED ON THE OUPUT OF THE ABOVE AR COMPARISON.
     function setAspect(vidElement) {
       if (viewportExceedVideoCheck(vidElement)) {
         $(vidElement).width('100%');
@@ -230,7 +233,8 @@
         console.log('AR: width priority.');
       }
     }
-
+    
+    // RE-RUN THE NECESSARY FUNCTIONS IF THE WINDOW IS RESIZED.
     $(window).resize( function() { setAspect('#bg-video') });
     $(window).resize( function() { setForegroundVideoHeight() });
     $(window).resize( function() { recenterVideotron('#videotron') });
